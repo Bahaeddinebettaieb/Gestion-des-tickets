@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<form #addForm="ngForm" >
+    <div class="container">
+     <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+             <h1> Mise a jour d'un utilisateur <br/></h1>
+         </div>
+     </div>
+     <div class="row">
+          <div class="col-md-offset-2 col-md-3">
+              <div class="form-group">
+                   <label for="Nom">Nom</label>
+                   <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="users.nom" >
+              </div>
+          </div>
+          <div class="col-md-offset-1 col-md-3">
+               <div class="form-group">
+                   <label for="Prenom">Prénom</label>
+                   <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" [(ngModel)]="users.prenom" required >
+               </div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-offset-2 col-md-7">
+              <div class="form-group">
+                  <label for="Email">Email address</label>
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" [(ngModel)]="users.email" required>
+              </div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-offset-2 col-md-7">
+              <div class="form-group">
+                  <label for="role">Role</label>
+                  <input type="text" class="form-control" id="role" name="role" placeholder="Role" [(ngModel)]="users.role" required>
+               </div>
+            </div>
+     </div>
+     <div class="row">
+         <div class="col-md-offset-2 col-md-3">
+              <div class="form-group">
+                  <label for="Password">Mot de passe</label>
+                  <input type="password" class="form-control" id="password" name="pwd" placeholder="Mot de passe" ngModel required>
+               </div>
+          </div>
+         <div class="col-md-offset-1 col-md-3">
+              <div class="form-group">
+                  <label for="Vpassword">Vérification mot de passe</label>
+                  <input type="password" class="form-control" id="vpassword" name="vpwd" placeholder="Vérification mot de passe" ngModel required>
+               </div>
+         </div>
+     </div>
+     <div class="row">
+          <div class="col-md-offset-2 col-md-3">
+              <div class="input-group">
+                  <span class="input-group-addon glyphicon glyphicon-earphone"></span>
+                  <input type="text" class="form-control" placeholder="Téléphone" name="tel" aria-describedby="basic-addon1" ngModel required >
+               </div>
+               <div class="input-group">
+                  <span class="input-group-addon glyphicon glyphicon-globe"></span>
+                  <input type="text" class="form-control" placeholder="Adresse" name="adr" aria-describedby="basic-addon1" ngModel required>
+               </div>
+           </div>
+     </div>
+
+     <br/>
+
+     <div class="row">
+           <div class="col-md-offset-5 col-md-1">
+               <button type="submit" class="btn btn-primary" [disabled]="!addForm.valid">Envoyer mes informations</button>
+           </div>
+     </div>
+    </div>
+   </form>
