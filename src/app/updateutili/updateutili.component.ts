@@ -40,6 +40,7 @@ export class UpdateutiliComponent implements OnInit {
         nom: form.value.nom,
         prenom: form.value.prenom,
         email: form.value.email,
+        role: form.value.role,
         pwd: form.value.password,
         tel: form.value.tel,
         adr: form.value.adr

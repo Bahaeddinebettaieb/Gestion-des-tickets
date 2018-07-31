@@ -11,6 +11,8 @@
       <th scope="col">Email</th>
       <th scope="col">Etat</th>
       <th scope="col">Role</th>
+      <th scope="col">telephone</th>
+      <th scope="col">Adresse</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +23,8 @@
       <td>{{u.email}}</td>
       <td>{{u.etat}}</td>
       <td>{{u.role}}</td>
+      <td>{{u.telephone}}</td>
+      <td>{{u.Adresse}}</td>
       <td><button (click)="remove(u.id_Utilisateur)">remove</button></td>
       <td><a routerLink="/updateutili/{{u.id_Utilisateur}}" >update </a></td>
     </tr>
