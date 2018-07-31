@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<form #addForm="ngForm" >
+<form #addForm="ngForm" (ngSubmit)="update(addForm) ">
     <div class="container">
      <div class="row">
         <div class="col-md-offset-2 col-md-8">
@@ -9,8 +9,9 @@
      <div class="row">
           <div class="col-md-offset-2 col-md-3">
               <div class="form-group">
-                   <label for="Nom">Nom</label>
-                   <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="users.nom" >
+                  <input type="hidden"  id="iduser" name="iduser"  [(ngModel)]="users.id_Utilisateur"  >
+                   <label for="nom">Nom</label>
+                   <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="users.nom" required >
               </div>
           </div>
           <div class="col-md-offset-1 col-md-3">
@@ -40,13 +41,13 @@
          <div class="col-md-offset-2 col-md-3">
               <div class="form-group">
                   <label for="Password">Mot de passe</label>
-                  <input type="password" class="form-control" id="password" name="pwd" placeholder="Mot de passe" [(ngModel)]="users.pwd" required>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" [(ngModel)]="users.password" required>
                </div>
           </div>
          <div class="col-md-offset-1 col-md-3">
               <div class="form-group">
                   <label for="Vpassword">Vérification mot de passe</label>
-                  <input type="password" class="form-control" id="vpassword" name="vpwd" placeholder="Vérification mot de passe" ngModel required>
+                  <input type="password" class="form-control" id="vpassword" name="vpwd" placeholder="Vérification mot de passe" [(ngModel)]="users.password" required>
                </div>
          </div>
      </div>
@@ -54,11 +55,11 @@
           <div class="col-md-offset-2 col-md-3">
               <div class="input-group">
                   <span class="input-group-addon glyphicon glyphicon-earphone"></span>
-                  <input type="text" class="form-control" placeholder="Téléphone" name="tel" aria-describedby="basic-addon1" ngModel required >
+                  <input type="text" class="form-control" placeholder="Téléphone" id ="tel" name="tel" aria-describedby="basic-addon1" [(ngModel)]="users.telephone" required >
                </div>
                <div class="input-group">
                   <span class="input-group-addon glyphicon glyphicon-globe"></span>
-                  <input type="text" class="form-control" placeholder="Adresse" name="adr" aria-describedby="basic-addon1" ngModel required>
+                  <input type="text" class="form-control" placeholder="Adresse" id ="adr" name="adr" aria-describedby="basic-addon1" [(ngModel)]="users.Adresse" required>
                </div>
            </div>
      </div>

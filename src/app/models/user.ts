@@ -6,4 +6,6 @@ export class User {
     etat: String;
     role: String;
     password: number;
+    telephone: number;
+    Adresse: String;
 }
