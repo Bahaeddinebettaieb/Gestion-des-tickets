@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { Ticket } from '../models/Ticket';
 import { Router } from '../../../node_modules/@angular/router';
 
 @Injectable(
  //  providedIn: 'root'
 )
 export class ResetuserService {
+  tick: any = 'http://localhost:3000/alltick';
   baseUrl: any = 'http://localhost:3000/all';
   verif: any = 'http://localhost:3000/verif';
   ajout: any = 'http://localhost:3000/ajout';
@@ -15,6 +17,10 @@ export class ResetuserService {
   constructor(private http: HttpClient, private router: Router) { }
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl);
+  }
+
+  getTickets(): Observable<Ticket[]> {
+    return this.http.get<Ticket[]>(this.tick);
   }
 
   logins(email: string, password: number) {

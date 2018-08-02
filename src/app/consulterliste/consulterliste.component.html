@@ -31,13 +31,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let t of ticket | async ; let i = index  ">
+      <th scope="row">{{i+1}}</th>
+      <td>{{t.label}}</td>
+      <td>{{t.description}}</td>
+      <td>{{t.statut}}</td>
+      <td>{{t.demandeur}}</td>
+      <td>{{t.responsable}}</td>
+      <td>{{t.urgence}}</td>
+      <td>{{t.dateouv}}</td>
+      <td>{{t.datefer}}</td>
     </tr>
   </tbody>
 </table>

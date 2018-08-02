@@ -27,7 +27,6 @@ const appRoutes: Routes = [
   {path: 'consulterutilisateur', component: ConsulterUtilisateurComponent,  canActivate : [LoginGuard]},
   {path: 'updateutili/:id', component: UpdateutiliComponent,  canActivate : [LoginGuard]},
   {path: 'contact', component: ContactComponent, canActivate : [LoginGuard]}
-
 ];
 
 @NgModule({

@@ -27,7 +27,7 @@ export class UpdateutiliComponent implements OnInit {
                 this.https.post(this.get, {
                   id: id
                 }).subscribe(resp => {
-                  console.log('err');
+                  console.log('modifier les informations necessaires');
                   this.users = resp[0];
             });
           }
@@ -45,7 +45,7 @@ export class UpdateutiliComponent implements OnInit {
         tel: form.value.tel,
         adr: form.value.adr
       }).subscribe(resp => {
-        console.log('modifier');
+        console.log('modifier avec succees');
         this.router.navigate(['/consulterutilisateur']);
         }, err => {
           console.log('verif err de modification');

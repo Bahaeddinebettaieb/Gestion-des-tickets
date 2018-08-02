@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '../../../node_modules/@angular/common/http';
+import { ResetuserService } from '../services/resetuser.service';
 
 @Component({
   selector: 'app-consulterliste',
@@ -6,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consulterliste.component.css']
 })
 export class ConsulterlisteComponent implements OnInit {
-
-  constructor() { }
-
+  ticket: any;
+  constructor(public http: ResetuserService,  private https: HttpClient) {
+    this.ticket = http.getTickets();
+  }
   ngOnInit() {
   }
 }
