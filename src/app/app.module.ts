@@ -17,6 +17,7 @@ import { UserService } from './services/user.service';
 import { ConsulterUtilisateurComponent } from './consulter-utilisateur/consulter-utilisateur.component';
 import { ContactComponent } from './contact/contact.component';
 import { UpdateutiliComponent } from './updateutili/updateutili.component';
+import { UpdateticketComponent } from './updateticket/updateticket.component';
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate : [LoginGuard]},
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'ajoututilisateur', component: AjoutUtilisateurComponent,  canActivate : [LoginGuard]},
   {path: 'consulterutilisateur', component: ConsulterUtilisateurComponent,  canActivate : [LoginGuard]},
   {path: 'updateutili/:id', component: UpdateutiliComponent,  canActivate : [LoginGuard]},
+  {path: 'updateticket/:id', component: UpdateticketComponent, canActivate : [LoginGuard]},
   {path: 'contact', component: ContactComponent, canActivate : [LoginGuard]}
 ];
 
@@ -41,6 +43,7 @@ const appRoutes: Routes = [
     ConsulterUtilisateurComponent,
     ContactComponent,
     UpdateutiliComponent,
+    UpdateticketComponent,
   ],
   imports: [
     HttpClientModule,

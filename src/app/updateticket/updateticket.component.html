@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+  <form #addtickForm="ngForm" (ngSubmit)="update(addtickForm) ">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <h1> Ajouter une ticket <br/> <small> Merci de renseigner les informations nécessaire </small></h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-offset-2 col-md-3">
+            <div class="form-group">
+              <label for="Titre du ticket">Titre du ticket</label>
+              <input type="text" class="form-control" id="label" name="label" placeholder="Titre du ticket" [(ngModel)]="Ticket.label">
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-3">
+            <div class="form-group">
+              <label for="Statut">Statut</label>
+              <input type="text" class="form-control" id="Statut" name="statut" placeholder="Statut" [(ngModel)]="Ticket.statut">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-offset-2 col-md-7">
+            <div class="form-group">
+              <label for="Description">Description :</label>
+              <textarea class="form-control" id="Description" name="description" placeholder="Description" [(ngModel)]="Ticket.description"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-offset-2 col-md-7">
+            <div class="form-group">
+              <label for="Demandeur">Demandeur</label>
+              <input type="text" class="form-control" id="demandeur" name="demandeur" placeholder="Demandeur" [(ngModel)]="Ticket.demandeur">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-offset-2 col-md-3">
+            <div class="form-group">
+              <label for="Date ouverture">Date ouverture</label>
+              <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="dateouv">
+            </div>
+          </div>
+          <div class="col-md-offset-1 col-md-3">
+            <div class="form-group">
+              <label for="Urgence">Urgence</label>
+              <input type="text" class="form-control" id="urgence" name="urgence" placeholder="Urgence" [(ngModel)]="Ticket.urgence">
+            </div>
+          </div>
+        </div>
+
+        <br/>
+        <div class="row">
+          <div class="col-md-offset-5 col-md-1">
+            <button type="button" class="btn btn-primary">Mettre a jour </button>
+          </div>
+        </div>
+    </div>
+  </form>

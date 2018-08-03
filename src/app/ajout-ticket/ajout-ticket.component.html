@@ -1,130 +1,60 @@
 <app-navbar></app-navbar>
-<!--<form>
-  <table border="0" >
-    <tr>
-      <th>id-Ticket :</th>
-      <th><input type="text" name="id"></th>
-    </tr>
-    <tr>
-      <th>Titre du ticket :</th>
-      <th><input type="text" name="titre"></th>
-    </tr>
-    <tr>
-      <th>Description :</th>
-      <th><textarea name="textarea" rows="5" cols="25"></textarea></th>
-    </tr>
-    <tr>
-      <th>Statut :</th>
-      <th><input type="text" name="Statut"></th>
-    </tr>
-    <tr>
-      <th>Demandeur :</th>
-      <th><input type="text" name="Demandeur"></th>
-    </tr>
-    <tr>
-      <th>Responsable :</th>
-      <th><input type="text" name="Responsable"></th>
-    </tr>
-    <tr>
-      <th>Urgence :</th>
-      <th><input type="text" name="Urgence"></th>
-    </tr>
-    <tr>
-      <th>Date ouverture :</th>
-      <th><input type="date" name="do"></th>
-    </tr>
-    <tr>
-      <th>Date fermeture :</th>
-      <th><input type="date" name="df"></th>
-    </tr>
-  </table>
-  <input class="submit" type="submit" name="Ajouter" value="Ajouter">
-  <input type="reset" name="Annuler" value="Annuler">
-</form>
--->
 <!--Formulaire bootstrap-->
-<div class="container">
-
-  <div class="row">
-  <div class="col-md-offset-2 col-md-8">
-  <h1> Ajouter une ticket <br/> <small> Merci de renseigner les informations nécessaire </small></h1>
-  </div>
-  </div>
-
-
-  <div class="row">
-  <div class="col-md-offset-2 col-md-3">
-  <div class="form-group">
-  <label for="Titre du ticket">Titre du ticket</label>
-  <input type="text" class="form-control" id="Titre du ticket" placeholder="Titre du ticket">
-  </div>
-  </div>
-
-
-  <div class="col-md-offset-1 col-md-3">
-  <div class="form-group">
-  <label for="Statut">Statut</label>
-  <input type="text" class="form-control" id="Statut" placeholder="Statut">
-  </div>
-  </div>
-  </div>
-
-  <div class="row">
-  <div class="col-md-offset-2 col-md-7">
-  <div class="form-group">
-  <label for="Description">Description :</label>
-  <textarea class="form-control" id="Description" placeholder="Description"></textarea>
-  </div>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-offset-2 col-md-3">
-    <div class="form-group">
-    <label for="Responsable">Responsable</label>
-    <input type="text" class="form-control" id="Responsable" placeholder="Responsable">
-    </div>
+<form #addtForm="ngForm" (ngSubmit)="ajout(addtForm)" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <h1> Ajouter une ticket <br/> <small> Merci de renseigner les informations nécessaire </small></h1>
+      </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-offset-2 col-md-3">
+        <div class="form-group">
+          <label for="Titre du ticket">Titre du ticket</label>
+          <input type="text" class="form-control" id="label" name="label" placeholder="Titre du ticket" ngModel required>
+        </div>
+      </div>
+    </div>
 
-    <div class="col-md-offset-1 col-md-3">
-      <div class="form-group">
-      <label for="Demandeur">Demandeur</label>
-      <input type="text" class="form-control" id="Demandeur" placeholder="Demandeur">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-7">
+        <div class="form-group">
+          <label for="Description">Description :</label>
+          <textarea class="form-control" id="description" name="description" placeholder="Description" ngModel required></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-offset-2 col-md-7">
+        <div class="form-group">
+          <label for="Demandeur">Demandeur</label>
+          <input type="text" class="form-control" id="demandeur" name="demandeur" placeholder="Demandeur" ngModel required>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-offset-2 col-md-3">
+        <div class="form-group">
+          <label for="Date ouverture">Date ouverture</label>
+          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Date ouverture" ngModel required>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-3">
+        <div class="form-group">
+          <label for="Urgence">Urgence</label>
+          <input type="text" class="form-control" id="urgence" name="urgence" placeholder="Urgence" ngModel required>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-md-offset-5 col-md-1">
+        <button type="submit" class="btn btn-primary" [disabled]="!addtForm.valid">Envoyer mes informations</button>
       </div>
     </div>
   </div>
-
-  <div class="row">
-  <div class="col-md-offset-2 col-md-3">
-  <div class="form-group">
-  <label for="Date ouverture">Date ouverture</label>
-  <input type="date" class="form-control" id="Date ouverture" placeholder="Date ouverture">
-  </div>
-
-
-  </div>
-  <div class="col-md-offset-1 col-md-3">
-  <div class="form-group">
-  <label for="Date fermeture">Date fermeture</label>
-  <input type="date" class="form-control" id="Date fermeture" placeholder="Date fermeture">
-  </div>
-  </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-offset-2 col-md-3">
-    <div class="form-group">
-    <label for="Urgence">Urgence</label>
-    <input type="text" class="form-control" id="Urgence" placeholder="Urgence">
-    </div>
-    </div>
-    </div>
-
-  <br/>
-  <div class="row">
-  <div class="col-md-offset-5 col-md-1">
-  <button type="button" class="btn btn-primary">Envoyer mes informations</button>
-  </div>
-  </div>
-</div>
+</form>

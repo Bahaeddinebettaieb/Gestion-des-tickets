@@ -1,20 +1,4 @@
 <app-navbar></app-navbar>
-<!--Tableau Statique-->
-<!--
-  <table border="2">
-  <tr>
-    <th>Id ticket</th>
-    <th>Nom ticket</th>
-    <th>Description</th>
-    <th>Statut</th>
-    <th>Demandeur</th>
-    <th>Responsable</th>
-    <th>Urgence</th>
-    <th>Date ouverture</th>
-    <th>Date fermeture</th>
-  </tr>
-</table>
--->
 <!--Tableau bootstrap-->
 <table class="table table-dark">
   <thead>
@@ -41,6 +25,8 @@
       <td>{{t.urgence}}</td>
       <td>{{t.dateouv}}</td>
       <td>{{t.datefer}}</td>
+      <td><button (click)="remove(t.id_ticket)">remove</button></td>
+      <td><a routerLink="/updateticket/{{t.id_ticket}}" >update </a></td>
     </tr>
   </tbody>
 </table>

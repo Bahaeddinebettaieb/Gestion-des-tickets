@@ -1,6 +1,6 @@
 export class Ticket {
   id_ticket: number;
-  nom: String;
+  label: String;
   description: String;
   status: String;
   demandeur: String;
