@@ -3,6 +3,7 @@ import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { Subscription } from '../../../node_modules/rxjs';
 import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 import { NgForm } from '../../../node_modules/@angular/forms';
+import { User } from '../models/user';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { NgForm } from '../../../node_modules/@angular/forms';
   styleUrls: ['./updateutili.component.css']
 })
 export class UpdateutiliComponent implements OnInit {
-  users: any;
+  users: User;
   Maj: any = 'http://localhost:3000/updateuser';
   get: any = 'http://localhost:3000/getuser';
   sub: Subscription;
@@ -22,13 +23,14 @@ export class UpdateutiliComponent implements OnInit {
   ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
               const id = params['id'];
-              console.log(id);
+             // console.log(id);
               if (id) {
                 this.https.post(this.get, {
                   id: id
                 }).subscribe(resp => {
                   console.log('modifier les informations necessaires');
                   this.users = resp[0];
+                  console.log(this.users);
             });
           }
       });

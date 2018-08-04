@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<form #addForm="ngForm" (ngSubmit)="update(addForm) ">
+<form #addForm="ngForm" (ngSubmit)="update(addForm)" *ngIf="users != null">
     <div class="container">
      <div class="row">
         <div class="col-md-offset-2 col-md-8">

@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-  <form #addtickForm="ngForm" (ngSubmit)="update(addtickForm) ">
+  <form #addtickForm="ngForm" (ngSubmit)="update(addtickForm) " *ngIf="Ticket != null">
     <div class="container">
         <div class="row">
           <div class="col-md-offset-2 col-md-8">
@@ -10,6 +10,7 @@
         <div class="row">
           <div class="col-md-offset-2 col-md-3">
             <div class="form-group">
+                <input type="hidden"  id="idticket" name="idticket"  [(ngModel)]="Ticket.id_ticket"   >
               <label for="Titre du ticket">Titre du ticket</label>
               <input type="text" class="form-control" id="label" name="label" placeholder="Titre du ticket" [(ngModel)]="Ticket.label">
             </div>
@@ -17,7 +18,7 @@
           <div class="col-md-offset-1 col-md-3">
             <div class="form-group">
               <label for="Statut">Statut</label>
-              <input type="text" class="form-control" id="Statut" name="statut" placeholder="Statut" [(ngModel)]="Ticket.statut">
+              <input type="text" class="form-control" id="Statut" name="statut" placeholder="Statut" [(ngModel)]="Ticket.status">
             </div>
           </div>
         </div>

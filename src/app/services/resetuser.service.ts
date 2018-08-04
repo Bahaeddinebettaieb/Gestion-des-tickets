@@ -1,3 +1,4 @@
+import { RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,8 +14,16 @@ export class ResetuserService {
   baseUrl: any = 'http://localhost:3000/all';
   verif: any = 'http://localhost:3000/verif';
   ajout: any = 'http://localhost:3000/ajout';
+  userAuth: any = 'http://localhost:3000/getuser';
   n: any;
   constructor(private http: HttpClient, private router: Router) { }
+
+  /*
+  getAuthUser(email): Observable<User> {
+    return this.http.get<any>(this.userAuth, {email: email}).subscribe(resp => {
+       })
+  }*/
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl);
   }

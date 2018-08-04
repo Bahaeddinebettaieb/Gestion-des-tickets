@@ -14,7 +14,7 @@ export class UpdateticketComponent implements OnInit {
   sub: Subscription;
   get: any = 'http://localhost:3000/getticket';
   Maj: any = 'http://localhost:3000/updateticket';
-  Ticket: any;
+  Ticket: Ticket;
   constructor(private https: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,6 +27,7 @@ export class UpdateticketComponent implements OnInit {
         }).subscribe(resp => {
           console.log('modifier les informations necessaires');
           this.Ticket = resp[0];
+          console.log(this.Ticket);
         });
       }
     });
