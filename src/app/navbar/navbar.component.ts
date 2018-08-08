@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   constructor(private route: Router) { }
-
+  role: any;
   ngOnInit() {
   }
   logout() {
@@ -17,5 +17,11 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('email');
     localStorage.removeItem('password');
     this.route.navigate(['']);
+  }
+  isAdmin() {
+    if (localStorage.getItem('role') === 'admin') {
+      return true;
+    }
+    return false;
   }
 }

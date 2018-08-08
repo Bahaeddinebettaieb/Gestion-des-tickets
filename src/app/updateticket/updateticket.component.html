@@ -45,7 +45,7 @@
           <div class="col-md-offset-2 col-md-3">
             <div class="form-group">
               <label for="Date ouverture">Date ouverture</label>
-              <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="dateouv">
+              <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="dateouv" [ngModel] ="Currentdate | date:'yyyy-MM-dd'">
             </div>
           </div>
           <div class="col-md-offset-1 col-md-3">

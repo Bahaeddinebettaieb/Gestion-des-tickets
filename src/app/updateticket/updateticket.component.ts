@@ -15,6 +15,7 @@ export class UpdateticketComponent implements OnInit {
   get: any = 'http://localhost:3000/getticket';
   Maj: any = 'http://localhost:3000/updateticket';
   Ticket: Ticket;
+  Currentdate = new Date();
   constructor(private https: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {

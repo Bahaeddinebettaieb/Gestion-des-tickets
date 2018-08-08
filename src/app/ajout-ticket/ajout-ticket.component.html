@@ -1,4 +1,6 @@
-<app-navbar></app-navbar>
+
+  <app-navbar></app-navbar >
+
 <!--Formulaire bootstrap-->
 <form #addtForm="ngForm" (ngSubmit)="ajout(addtForm)" >
   <div class="container">
@@ -39,7 +41,7 @@
       <div class="col-md-offset-2 col-md-3">
         <div class="form-group">
           <label for="Date ouverture">Date ouverture</label>
-          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Date ouverture" ngModel required>
+          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Date ouverture"  [ngModel] ="Currentdate | date:'yyyy-MM-dd'"  required>
         </div>
       </div>
       <div class="col-md-offset-1 col-md-3">

@@ -12,7 +12,7 @@ import { Router } from '../../../node_modules/@angular/router';
 })
 export class AjoutUtilisateurComponent implements OnInit {
   add: any = 'http://localhost:3000/ajout';
-
+  role: any;
 
   constructor(private router: Router, private https: HttpClient) { }
 

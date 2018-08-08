@@ -13,7 +13,7 @@ export class ConsulterUtilisateurComponent implements OnInit {
  users: any;
  delete: any = 'http://localhost:3000/removeuser';
  Maj: any = 'http://localhost3000/updateuser';
-
+role: any;
   constructor(public http: ResetuserService,  private https: HttpClient, private router: Router) {
     this.users = http.getUsers();
   }

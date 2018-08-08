@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -18,6 +19,7 @@ import { ConsulterUtilisateurComponent } from './consulter-utilisateur/consulter
 import { ContactComponent } from './contact/contact.component';
 import { UpdateutiliComponent } from './updateutili/updateutili.component';
 import { UpdateticketComponent } from './updateticket/updateticket.component';
+import { BarComponent } from './bar/bar.component';
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate : [LoginGuard]},
@@ -44,12 +46,13 @@ const appRoutes: Routes = [
     ContactComponent,
     UpdateutiliComponent,
     UpdateticketComponent,
+    BarComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [LoginGuard, ResetuserService, UserService],
   bootstrap: [AppComponent]

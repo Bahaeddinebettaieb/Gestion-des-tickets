@@ -4,6 +4,7 @@ import { Router } from '../../../node_modules/@angular/router';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { NgForm } from '../../../node_modules/@angular/forms';
 
+
 @Component({
   selector: 'app-ajout-ticket',
   templateUrl: './ajout-ticket.component.html',
@@ -11,8 +12,12 @@ import { NgForm } from '../../../node_modules/@angular/forms';
 })
 export class AjoutTicketComponent implements OnInit {
   add: any = 'http://localhost:3000/ajouttick';
+  role: any;
   Ticket: any;
-  constructor(private router: Router, private https: HttpClient) { }
+  Currentdate = new Date();
+  demandeur: any;
+  constructor(private router: Router, private https: HttpClient) {
+  }
 
   ngOnInit() {
   }

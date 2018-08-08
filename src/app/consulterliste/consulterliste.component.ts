@@ -1,7 +1,8 @@
+import { Ticket } from './../models/ticket';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { ResetuserService } from '../services/resetuser.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 
 
 @Component({
@@ -11,13 +12,15 @@ import { Router } from '../../../node_modules/@angular/router';
 })
 export class ConsulterlisteComponent implements OnInit {
   ticket: any;
+  Ticket: Ticket;
   delete: any = 'http://localhost:3000/removeticket';
   update: any = 'http://localhost:3000/updateticket';
-  constructor(public http: ResetuserService,  private https: HttpClient, private router: Router) {
+  constructor(public http: ResetuserService,  private https: HttpClient, private router: Router, private route: ActivatedRoute) {
     this.ticket = http.getTickets();
   }
   ngOnInit() {
   }
+
   remove(id_ticket) {
     this.https.post(this.delete, {
       id: id_ticket

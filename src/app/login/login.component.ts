@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -66,11 +67,17 @@ export class LoginComponent implements OnInit {
           email: form.value.email,
           password: form.value.password
       }).subscribe(resp => {
-        console.log(resp[0].found);
+        console.log(resp);
         // this.n = resp[0].found;
         localStorage.setItem('email' , form.value.email);
+        localStorage.setItem('role' , resp[0].role);
         console.log('Bienvenue dans notre site');
-        this.router.navigate(['/dashboard']);
+        if (resp[0].role === 'admin') {
+          this.router.navigate(['/dashboard']);
+        } else {
+          this.router.navigate(['/dashboard']);
+          console.log('client');
+        }
        }, err => {
           console.log('verif err');
        } ) ;
