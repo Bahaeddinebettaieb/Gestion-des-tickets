@@ -26,9 +26,11 @@
       <td>{{t.urgence}}</td>
       <td>{{t.dateouv}}</td>
       <td>{{t.datefer}}</td>
-      <td><button (click)="remove(t.id_ticket)">remove</button></td>
-      <td><a routerLink="/updateticket/{{t.id_ticket}}" >update </a></td>
+      <td><button (click)="remove(t.id_ticket)">Remove</button></td>
+      <td><a routerLink="/updateticket/{{t.id_ticket}}" >Update </a></td>
+      <td><a routerLink="/consulterticket/{{t.id_ticket}}" >Consulter </a></td>
     </tr>
   </tbody>
 </table>
+
 </div>

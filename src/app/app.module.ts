@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,6 +21,8 @@ import { ContactComponent } from './contact/contact.component';
 import { UpdateutiliComponent } from './updateutili/updateutili.component';
 import { UpdateticketComponent } from './updateticket/updateticket.component';
 import { BarComponent } from './bar/bar.component';
+import { ConsulterticketComponent } from './consulterticket/consulterticket.component';
+
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate : [LoginGuard]},
@@ -30,6 +33,7 @@ const appRoutes: Routes = [
   {path: 'consulterutilisateur', component: ConsulterUtilisateurComponent,  canActivate : [LoginGuard]},
   {path: 'updateutili/:id', component: UpdateutiliComponent,  canActivate : [LoginGuard]},
   {path: 'updateticket/:id', component: UpdateticketComponent, canActivate : [LoginGuard]},
+  {path: 'consulterticket/:id', component: ConsulterticketComponent, canActivate : [LoginGuard]},
   {path: 'contact', component: ContactComponent, canActivate : [LoginGuard]}
 ];
 
@@ -47,6 +51,7 @@ const appRoutes: Routes = [
     UpdateutiliComponent,
     UpdateticketComponent,
     BarComponent,
+    ConsulterticketComponent,
   ],
   imports: [
     HttpClientModule,

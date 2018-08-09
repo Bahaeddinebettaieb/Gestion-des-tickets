@@ -29,27 +29,29 @@ export class UpdateticketComponent implements OnInit {
           console.log('modifier les informations necessaires');
           this.Ticket = resp[0];
           console.log(this.Ticket);
+          console.log(localStorage.getItem('demandeur'));
+
         });
       }
     });
   }
-  update(form: NgForm) {
-    console.log(form.value.idticket);
-    this.https.post(this.Maj, {
-      id: form.value.idticket,
-      label: form.value.label,
-      description: form.value.description,
-      statut: form.value.statut,
-      demandeur: form.value.demandeur,
-      responsable: form.value.responsable,
-      urgence: form.value.uregnce,
-      dateouv: form.value.dateouv,
-      datefer: form.value.datefer
-    }).subscribe(resp => {
-      console.log('modifier avec succees');
-      this.router.navigate(['/consulterliste']);
-      }, err => {
-        console.log('verif err de modification');
-    });
-  }
+    update(form: NgForm) {
+      // console.log(form.value.idticket);
+      this.https.post(this.Maj, {
+        id: form.value.idticket,
+        label: form.value.label,
+        description: form.value.description,
+        statut: form.value.statut,
+        demandeur: form.value.demandeur,
+      // responsable: form.value.responsable,
+        urgence: form.value.uregnce,
+        dateouv: form.value.dateouv,
+        // datefer: form.value.datefer
+      }).subscribe(resp => {
+        console.log('modifier avec succees');
+        this.router.navigate(['/consulterliste']);
+        }, err => {
+          console.log('verif err de modification');
+      });
+    }
 }

@@ -50,17 +50,28 @@
           </div>
           <div class="col-md-offset-1 col-md-3">
             <div class="form-group">
-              <label for="Urgence">Urgence</label>
-              <input type="text" class="form-control" id="urgence" name="urgence" placeholder="Urgence" [(ngModel)]="Ticket.urgence">
+              <label for="datefer">Date fermeture</label>
+             <!-- <input type="date" class="form-control" id="datefer" name="datefer" placeholder="datefer" [(ngModel)]="Ticket.datefer">-->
             </div>
           </div>
         </div>
 
+
+        <div class="row">
+          <div class="col-md-offset-2 col-md-3">
+            <div class="form-group">
+              <label for="Urgence">Urgence</label>
+              <input type="urgence" class="form-control" id="urgence" name="urgence" placeholder="urgence" [ngModel] ="Ticket.urgence">
+            </div>
+          </div>
+          </div>
+
         <br/>
         <div class="row">
           <div class="col-md-offset-5 col-md-1">
-            <button type="button" class="btn btn-primary">Mettre a jour </button>
+            <button type="submit" class="btn btn-primary" [disabled]="!addtickForm.valid">Envoyer mes informations</button>
           </div>
         </div>
     </div>
+
   </form>

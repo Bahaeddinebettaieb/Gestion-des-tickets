@@ -29,7 +29,7 @@ export class AjoutTicketComponent implements OnInit {
       statut: form.value.statut,
       responsable: form.value.responsable,
       demandeur: form.value.demandeur,
-      dateouv: form.value.dateouv,
+      dateouv: this.Currentdate,
       datefer: form.value.datefer,
       urgence: form.value.urgence
     }).subscribe(resp => {
