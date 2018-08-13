@@ -29,19 +29,26 @@
     </div>
 
     <div class="row">
-      <div class="col-md-offset-2 col-md-7">
+      <div class="col-md-offset-2 col-md-3">
         <div class="form-group">
           <label for="Demandeur">Demandeur</label>
-          <input type="text" class="form-control" id="demandeur" name="demandeur" placeholder="Demandeur" ngModel required>
+          <input type="text" class="form-control" id="demandeur" name="demandeur" placeholder="Demandeur" [ngModel]="nomDemandeur" required>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-3">
+        <div class="form-group">
+          <label for="Responsable">Responsable</label>
+          <input type="text" class="form-control" id="responsable" name="responsable" placeholder="Responsable" ngModel required>
         </div>
       </div>
     </div>
+  </div>
 
     <div class="row">
       <div class="col-md-offset-2 col-md-3">
         <div class="form-group">
-          <label for="Date ouverture">Date ouverture</label>
-          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Date ouverture"  [ngModel] ="Currentdate | date:'yyyy-MM-dd'"  required>
+          <label for="Dateouverture">Date ouverture</label>
+          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Dateouverture"  [ngModel]="Currentdate | date:'yyyy-MM-dd'" required>
         </div>
       </div>
       <div class="col-md-offset-1 col-md-3">
@@ -58,5 +65,4 @@
         <button type="submit" class="btn btn-primary" [disabled]="!addtForm.valid">Envoyer mes informations</button>
       </div>
     </div>
-  </div>
 </form>

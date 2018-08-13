@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ResetuserService } from '../services/resetuser.service';
-// import { User } from '../models/user';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { Router } from '../../../node_modules/@angular/router';
 
@@ -10,10 +9,10 @@ import { Router } from '../../../node_modules/@angular/router';
   styleUrls: ['./consulter-utilisateur.component.css']
 })
 export class ConsulterUtilisateurComponent implements OnInit {
- users: any;
- delete: any = 'http://localhost:3000/removeuser';
- Maj: any = 'http://localhost3000/updateuser';
-role: any;
+  users: any;
+  delete: any = 'http://localhost:3000/removeuser';
+  Maj: any = 'http://localhost3000/updateuser';
+  role: any;
   constructor(public http: ResetuserService,  private https: HttpClient, private router: Router) {
     this.users = http.getUsers();
   }

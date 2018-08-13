@@ -14,15 +14,19 @@ export class ResetuserService {
   baseUrl: any = 'http://localhost:3000/all';
   verif: any = 'http://localhost:3000/verif';
   ajout: any = 'http://localhost:3000/ajout';
-  userAuth: any = 'http://localhost:3000/getuser';
+  userAuth: any = 'http://localhost:3000/getuseremail';
+  gettick: any = 'http://localhost:3000/getticket';
+  getstatut: any = 'http://locahost:3000/getstatut';
   n: any;
   constructor(private http: HttpClient, private router: Router) { }
 
-  /*
   getAuthUser(email): Observable<User> {
-    return this.http.get<any>(this.userAuth, {email: email}).subscribe(resp => {
-       })
-  }*/
+    return this.http.post<any>(this.userAuth, {email: email});
+  }
+
+  getStatut(id): Observable<Ticket> {
+    return this.http.post<any>(this.getstatut, {id: id});
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl);
@@ -30,6 +34,10 @@ export class ResetuserService {
 
   getTickets(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(this.tick);
+  }
+
+  getTicketById(id: number): Observable<Ticket> {
+    return this.http.post<Ticket>(this.gettick, { id: id });
   }
 
   logins(email: string, password: number) {

@@ -1,1 +1,22 @@
 <app-navbar></app-navbar>
+<form *ngIf="ticket">
+  <div class="table-responsive">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <p># : {{ticket.id_ticket}}</p>
+          <p>Nom Ticket : {{ticket.label}}</p>
+          <p >Description : {{ticket.description}}</p>
+          <p >Statut : {{ticket.status}}</p>
+          <p>Demandeur : {{ticket.demandeur}}</p>
+          <p>Responsalble : {{ticket.responsable}}</p>
+          <p>Urgence : {{ticket.urgence}}</p>
+          <p>Date ouverture : {{ticket.dateouv}}</p>
+          <p>Date fermeture : {{ticket.datefer}}</p>
+        </tr>
+
+      </thead>
+
+    </table>
+  </div>
+</form>

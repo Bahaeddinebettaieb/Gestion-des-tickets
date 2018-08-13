@@ -13,7 +13,6 @@ import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 export class ConsulterlisteComponent implements OnInit {
   ticket: any;
   Currentdate = new Date();
-  Ticket: Ticket;
   delete: any = 'http://localhost:3000/removeticket';
   update: any = 'http://localhost:3000/updateticket';
   constructor(public http: ResetuserService,  private https: HttpClient, private router: Router, private route: ActivatedRoute) {

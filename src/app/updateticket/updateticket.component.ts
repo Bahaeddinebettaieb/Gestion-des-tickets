@@ -4,6 +4,7 @@ import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 import { Subscription } from '../../../node_modules/rxjs';
 import { NgForm } from '../../../node_modules/@angular/forms';
+import { ResetuserService } from '../services/resetuser.service';
 
 @Component({
   selector: 'app-updateticket',
@@ -15,8 +16,9 @@ export class UpdateticketComponent implements OnInit {
   get: any = 'http://localhost:3000/getticket';
   Maj: any = 'http://localhost:3000/updateticket';
   Ticket: Ticket;
+  id_ticket: any;
   Currentdate = new Date();
-  constructor(private https: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private https: HttpClient, private router: Router, private route: ActivatedRoute, private userService: ResetuserService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -29,12 +31,11 @@ export class UpdateticketComponent implements OnInit {
           console.log('modifier les informations necessaires');
           this.Ticket = resp[0];
           console.log(this.Ticket);
-          console.log(localStorage.getItem('demandeur'));
-
         });
       }
     });
   }
+
     update(form: NgForm) {
       // console.log(form.value.idticket);
       this.https.post(this.Maj, {

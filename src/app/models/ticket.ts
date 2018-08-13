@@ -6,6 +6,6 @@ export class Ticket {
   demandeur: String;
   responsable: String;
   urgence: String;
-  dateouv: Date;
-  datefer: Date;
+  dateouv: String;
+  datefer: String;
 }

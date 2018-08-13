@@ -1,4 +1,4 @@
-import { Ticket } from './../models/ticket';
+import { ResetuserService } from './../services/resetuser.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '../../../node_modules/@angular/router';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
@@ -15,12 +15,29 @@ export class AjoutTicketComponent implements OnInit {
   role: any;
   Ticket: any;
   Currentdate = new Date();
-  demandeur: any;
-  constructor(private router: Router, private https: HttpClient) {
+
+  nomDemandeur: any;
+  email: any;
+  id_ticket: any;
+  constructor(private router: Router, private https: HttpClient, private userService: ResetuserService) {
   }
 
+
   ngOnInit() {
+    this.email = localStorage.getItem('email');
+    console.log(this.email);
+    this.getAuthUser(this.email);
+
   }
+
+
+  getAuthUser(email) {
+    this.userService.getAuthUser(email).subscribe(res => {
+      console.log('res: ', res);
+      this.nomDemandeur = res[0].prenom;
+    });
+  }
+
   ajout (form: NgForm ) {
     console.log(form.value);
     this.https.post(this.add, {
@@ -29,7 +46,7 @@ export class AjoutTicketComponent implements OnInit {
       statut: form.value.statut,
       responsable: form.value.responsable,
       demandeur: form.value.demandeur,
-      dateouv: this.Currentdate,
+      dateouv: form.value.dateouv.toString(),
       datefer: form.value.datefer,
       urgence: form.value.urgence
     }).subscribe(resp => {
