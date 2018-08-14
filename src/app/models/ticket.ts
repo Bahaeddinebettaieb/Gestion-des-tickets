@@ -2,7 +2,7 @@ export class Ticket {
   id_ticket: number;
   label: String;
   description: String;
-  status: String;
+  statut: String;
   demandeur: String;
   responsable: String;
   urgence: String;

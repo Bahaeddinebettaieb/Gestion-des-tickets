@@ -11,11 +11,26 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
 export class ConsulterticketComponent implements OnInit {
   ticket: Ticket;
   id: number;
+  datefer: Date;
+  status: String;
+  Currentdate = new Date();
   constructor(public http: ResetuserService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.loadTicket();
+  }
+
+  fermer() {
+    this.http.updateTicket(this.id).subscribe();
+  }
+
+  isAdmin() {
+    //  console.log(localStorage.getItem('role'));
+    if (localStorage.getItem('role') === 'admin')  {
+      return true;
+    }
+    return false;
   }
 
   loadTicket() {

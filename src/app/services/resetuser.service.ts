@@ -17,7 +17,7 @@ export class ResetuserService {
   userAuth: any = 'http://localhost:3000/getuseremail';
   gettick: any = 'http://localhost:3000/getticket';
   getuser: any = 'http://localhost:3000/getuser';
-
+  updatestatus: any = 'http://localhost:3000/updatestatus';
   n: any;
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -40,6 +40,11 @@ export class ResetuserService {
   getUserById(id: number): Observable<User> {
     return this.http.post<User>(this.getuser, {id: id});
   }
+
+  updateTicket(id: number): Observable<Ticket> {
+    return this.http.post<Ticket>(this.updatestatus, {id: id});
+  }
+
 
   logins(email: string, password: number) {
   console.log('je suis dans le login');

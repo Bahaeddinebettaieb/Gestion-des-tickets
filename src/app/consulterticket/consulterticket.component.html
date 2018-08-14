@@ -7,14 +7,14 @@
           <p># : {{ticket.id_ticket}}</p>
           <p>Nom Ticket : {{ticket.label}}</p>
           <p >Description : {{ticket.description}}</p>
-          <p >Statut : {{ticket.status}}</p>
+          <p  >Statut : {{ticket.statut}}</p>
           <p>Demandeur : {{ticket.demandeur}}</p>
           <p>Responsalble : {{ticket.responsable}}</p>
           <p>Urgence : {{ticket.urgence}}</p>
           <p>Date ouverture : {{ticket.dateouv}}</p>
           <p>Date fermeture : {{ticket.datefer}}</p>
         </tr>
-
+        <button *ngIf="(isAdmin())" type="submit" name="fermer" (click)="fermer()">Fermer</button>
       </thead>
 
     </table>
