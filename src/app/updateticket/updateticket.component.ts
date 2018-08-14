@@ -44,10 +44,10 @@ export class UpdateticketComponent implements OnInit {
         description: form.value.description,
         statut: form.value.statut,
         demandeur: form.value.demandeur,
-      // responsable: form.value.responsable,
+        responsable: form.value.responsable,
         urgence: form.value.uregnce,
         dateouv: form.value.dateouv,
-        // datefer: form.value.datefer
+        datefer: form.value.datefer
       }).subscribe(resp => {
         console.log('modifier avec succees');
         this.router.navigate(['/consulterliste']);

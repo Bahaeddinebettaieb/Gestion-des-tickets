@@ -1,5 +1,4 @@
-
-  <app-navbar></app-navbar >
+<app-navbar></app-navbar >
 
 <!--Formulaire bootstrap-->
 <form #addtForm="ngForm" (ngSubmit)="ajout(addtForm)" >
@@ -44,25 +43,34 @@
     </div>
   </div>
 
-    <div class="row">
-      <div class="col-md-offset-2 col-md-3">
-        <div class="form-group">
-          <label for="Dateouverture">Date ouverture</label>
-          <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Dateouverture"  [ngModel]="Currentdate | date:'yyyy-MM-dd'" required>
-        </div>
-      </div>
-      <div class="col-md-offset-1 col-md-3">
-        <div class="form-group">
-          <label for="Urgence">Urgence</label>
-          <input type="text" class="form-control" id="urgence" name="urgence" placeholder="Urgence" ngModel required>
-        </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-3">
+      <div class="form-group">
+        <label for="Dateouverture">Date ouverture</label>
+        <input type="date" class="form-control" id="dateouv" name="dateouv" placeholder="Dateouverture"  [ngModel]="Currentdate | date:'yyyy-MM-dd'" required>
       </div>
     </div>
+    <div class="col-md-offset-1 col-md-3">
+      <div class="form-group">
+        <label for="datefer">Date Fermeture</label>
+        <input type="date" class="form-control" id="datefer" name="datefer" placeholder="Date fermeture" [ngModel]="Currentdate | date:'yyyy-MM-dd'" required>
+      </div>
+    </div>
+  </div>
 
-    <br/>
-    <div class="row">
-      <div class="col-md-offset-5 col-md-1">
-        <button type="submit" class="btn btn-primary" [disabled]="!addtForm.valid">Envoyer mes informations</button>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-3">
+      <div class="form-group">
+        <label for="Urgence">Urgence</label>
+        <input type="text" class="form-control" id="urgence" name="urgence" placeholder="Urgence" ngModel required>
       </div>
     </div>
+  </div>
+
+  <br/>
+  <div class="row">
+    <div class="col-md-offset-5 col-md-1">
+      <button type="submit" class="btn btn-primary" [disabled]="!addtForm.valid">Envoyer mes informations</button>
+    </div>
+  </div>
 </form>

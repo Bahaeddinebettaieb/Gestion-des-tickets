@@ -22,6 +22,7 @@ import { UpdateutiliComponent } from './updateutili/updateutili.component';
 import { UpdateticketComponent } from './updateticket/updateticket.component';
 import { BarComponent } from './bar/bar.component';
 import { ConsulterticketComponent } from './consulterticket/consulterticket.component';
+import { ConsultutilisateurComponent } from './consultutilisateur/consultutilisateur.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   {path: 'updateutili/:id', component: UpdateutiliComponent,  canActivate : [LoginGuard]},
   {path: 'updateticket/:id', component: UpdateticketComponent, canActivate : [LoginGuard]},
   {path: 'consulterticket/:id', component: ConsulterticketComponent, canActivate : [LoginGuard]},
+  {path: 'consultutilisateur/:id', component: ConsultutilisateurComponent, canActivate : [LoginGuard]},
   {path: 'contact', component: ContactComponent, canActivate : [LoginGuard]}
 ];
 
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     UpdateticketComponent,
     BarComponent,
     ConsulterticketComponent,
+    ConsultutilisateurComponent,
   ],
   imports: [
     HttpClientModule,
