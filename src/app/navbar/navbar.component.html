@@ -1,4 +1,5 @@
-<ul>
+
+<!--<ul>
   <li><a class="active" href="/dashboard">Home</a></li>
   <li><a routerLink="/ajoutticket">Ajouter une ticket</a></li>
   <li><a routerLink="/consulterliste">Consulter liste des tickets</a></li>
@@ -6,7 +7,30 @@
   <li *ngIf="isAdmin()"><a routerLink="/consulterutilisateur" >Consulter Utilisateur </a></li>
   <li><a routerLink="/contact" >Contact US </a></li>
   <li><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-</ul>
+</ul>-->
+
+<div>
+    <a class="menu" href="/dashboard">Menu</a>
+    <ul>
+      <li>
+        <a>Ticket</a>
+        <ul>
+          <li><a routerLink="/ajoutticket">Ajout tickets </a></li>
+          <li><a routerLink="/consulterliste">Consulter liste des tickets</a></li>
+        </ul>
+      </li>
+      <li *ngIf="isAdmin()">
+          <a>Utilisateur</a>
+          <ul>
+            <li ><a routerLink="/ajoututilisateur" >Ajouter un utilisateur</a></li>
+            <li ><a routerLink="/consulterutilisateur" >Consulter Utilisateur </a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/contact" >Contact US </a></li>
+        <li><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a></li>
+    </ul>
+  </div>
+
   <!--Bootstrap navbar-->
   <!--
 <nav class="navbar navbar-default">
@@ -26,3 +50,6 @@
   </div>
 </nav>
 -->
+
+
+

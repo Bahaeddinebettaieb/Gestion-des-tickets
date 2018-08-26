@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {UserService} from '../services/user.service';
 import { ResetuserService } from '../services/resetuser.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { NgProgress } from '@ngx-progressbar/core';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   verif: any = 'http://localhost:3000/verif';
   check: any;
-  constructor(private router: Router, public userservice: UserService, public http: ResetuserService, private https: HttpClient) {
+  constructor(private router: Router, public userservice: UserService, public http: ResetuserService,
+    private https: HttpClient, public progress: NgProgress) {
   }
 
   ngOnInit() {
@@ -58,7 +60,9 @@ export class LoginComponent implements OnInit {
     }*/
 
     // Methode Dynamique avec le node js
+
     login(form: NgForm ) {
+      this.progress.start();
       console.log(form.value);
       if (form.value.email === '' || form.value.password === '' ) {
         console.log('Entrer votre email ou password');
@@ -67,13 +71,14 @@ export class LoginComponent implements OnInit {
           email: form.value.email,
           password: form.value.password
       }).subscribe(resp => {
-        console.log(resp);
+          console.log(resp);
         // this.n = resp[0].found;
         localStorage.setItem('email' , form.value.email);
         localStorage.setItem('role' , resp[0].role);
         console.log('Bienvenue dans notre site');
         if (resp[0].role === 'admin') {
-          this.router.navigate(['/dashboard']);
+            this.router.navigate(['/dashboard']);
+            this.progress.complete();
         } else {
           this.router.navigate(['/dashboard']);
           console.log('client');

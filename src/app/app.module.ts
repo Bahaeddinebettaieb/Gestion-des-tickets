@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 
 import { AppComponent } from './app.component';
@@ -60,6 +60,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserModule,
     FormsModule,
+    NgProgressModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [LoginGuard, ResetuserService, UserService],
